@@ -1,0 +1,89 @@
+.btn-todos{
+    border: 3px solid #FF8A00;
+}
+
+.tag-todos{
+    background-color: #FF8A00;
+}
+
+.btn-aberto{
+    border: 3px solid #A0C044;
+}
+
+.tag-aberto{
+    background-color: #A0C044;
+}
+
+.btn-andamento{
+    border: 3px solid #008DD4;
+}
+
+.btn-concluido{
+    border: 3px solid #CB579E;
+}
+
+.nav-cursos {
+    .navbar-brand {
+        gap: 8px;
+        color: #5C6471;
+        font-weight: 700;
+
+        span{
+            color: #00446B;
+        }
+    }
+
+    .nav-link {
+        color: #a5adbb;
+        font-weight: #a5adbb;
+        font-weight: 700;
+
+        &.active {
+            color: #00446b;
+            border: 0;
+            border-bottom: 2px solid #00446b;
+            background-color: #d9e3e9;
+        }
+    }
+}
+
+.tabs-cursos {
+    h3 {
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .btn-collapse,
+    .btn-collapse i {
+        color: #36a9e1;
+        font-weight: 700;
+
+        &::after {
+            font-family: "bootstrap-icons";
+            content: "\F286";
+        }
+
+        &.collapsed::after {
+            content: "\F282";
+        }
+    }
+
+    img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    li .d-flex {
+        gap: 20px;
+    }
+
+    .titulo,
+    .link {
+        font-weight: 700;
+    }
+}

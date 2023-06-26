@@ -1,0 +1,114 @@
+.div-noticia-ultimas {
+
+    .row {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .pesquisa {
+        margin-top: 24px;
+
+        .form-control {
+            height: 56px;
+            width: auto;
+            margin-left: auto;
+
+            input {
+                width: 320px;
+                outline: none;
+            }
+        }
+    }
+
+    .btn-vermais {
+        color: #00446b;
+        border: 1px solid #00446b;
+        font-weight: 600;
+    }
+
+    .card-noticia {
+        aspect-ratio: 3/4;
+
+        .card-body {
+            padding: 8px;
+        }
+
+        .card-img {
+            aspect-ratio: 3/1;
+            object-fit: cover;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .tags a {
+            color: #36a9e1;
+            text-decoration: none;
+        }
+    }
+}
+
+.div-noticia-destaque{
+    background-color: white;
+}
+
+.noticia-destaque {
+    gap: 20px;
+
+    .data {
+        color: #5c6471;
+    }
+
+    .texto {
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 12;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    a {
+        color: #00446b;
+        text-decoration: none;
+    }
+
+    .titulo {
+        overflow: hidden;
+        font-weight: 400;
+        font-size: 28px;
+    }
+
+    img{
+        border-radius: 8px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .div-noticia-destaque{
+        img{
+            aspect-ratio: 1 / 2;
+        }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .noticia-destaque{
+        flex-direction: column;
+        img{
+            aspect-ratio: 5 / 3;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .card-noticia{
+        aspect-ratio: unset !important;
+    }
+}

@@ -1,0 +1,74 @@
+
+.div-editais {
+    background-color: #eff3f6;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+
+    .botoes-filtro {
+        .btn {
+            font-weight: 600;
+        }
+
+        .btn:first-child {
+            background-color: #ff8a00;
+        }
+
+        .btn:nth-child(2) {
+            background-color: #a0c044;
+        }
+
+        .btn:nth-child(3) {
+            background-color: #008dd4;
+        }
+
+        .btn:last-child {
+            background-color: #cb579e;
+        }
+    }
+
+    .row {
+        margin-top: 40px;
+    }
+
+    .card-edital {
+        aspect-ratio: 3 / 2;
+        background-color: white;
+        border: 0;
+
+        .card-body {
+            padding: 8px;
+        }
+
+        h6 {
+            font-weight: 600;
+        }
+
+        .titulo,
+        .data {
+            color: #262626;
+        }
+
+        .data {
+            font-weight: 300;
+        }
+    }
+
+    .card-edital-aberto {
+        hr {
+            border-color: #a0c044;
+        }
+    }
+
+    .card-edital-andamento {
+        hr {
+            border-color: #008dd4;
+        }
+    }
+
+    .card-edital-concluido {
+        hr {
+            border-color: #cb579e;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.div-parceiros{
+    .card{
+        aspect-ratio: 2 / 1;
+        border: 4px solid #00446B;
+        border-radius: 8px;
+    }
+}
+
+.div-parceiros-seja {
+    background-color: #eff3f6;
+}
+
+.div-interesse {
+    .btn {
+        font-weight: 700;
+        border-radius: 16px;
+        font-size: 24px;
+    }
+
+    .tags {
+        gap: 16px;
+    }
+
+    .tag-1 {
+        background-color: #ff8a00;
+    }
+
+    .tag-2 {
+        background-color: #a0c044;
+    }
+
+    .tag-3 {
+        background-color: #008dd4;
+    }
+
+    .tag-4 {
+        background-color: #cb579e;
+    }
+
+    .tag-5 {
+        background-color: #02bead;
+    }
+
+    .tah-6 {
+        background-color: #a5adbb;
+    }
+
+    .card {
+        outline: none;
+        border: 4px solid #00446b;
+        border-radius: 8px;
+        aspect-ratio: 2 / 1;
+    }
+}

@@ -1,0 +1,369 @@
+hr {
+    width: 120px;
+    border: 2.5px solid #36a9e1;
+    opacity: 1;
+    border-radius: 2.5px;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+.div-cabecalho {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #d9e3e9;
+    background-image: url("../../imgs/bg.png");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .titulo {
+        font-weight: 900;
+        font-size: 65px;
+    }
+
+    .subtitulo {
+        font-style: italic;
+        font-size: 34px;
+        margin-bottom: 72px;
+    }
+
+    .texto {
+        font-size: 20px;
+    }
+
+    .btn-cursos {
+        background-color: #00446b;
+        border-radius: 8px;
+        color: white;
+        font-weight: 700;
+        font-size: 24px;
+        margin-top: 16px;
+        margin-bottom: 72px;
+    }
+
+    .btn-editais {
+        border-bottom: 4px solid #262626;
+        border-radius: 0;
+        font-weight: 700;
+        font-size: 24px;
+    }
+}
+
+.div-aprendizado,
+.div-infos{
+    background-color: white;
+}
+
+.ambientes {
+    font-size: 26px;
+
+    .btn {
+        color: white;
+        background-color: #262626;
+        font-size: 26px;
+    }
+
+    .ambiente {
+        padding: 32px;
+        margin-bottom: 1em;
+        font-weight: 400;
+    }
+
+    .ambiente-1 {
+        background-color: #ff8a00;
+        border-radius: 76px 4px 4px 4px;
+    }
+
+    .ambiente-2 {
+        background-color: #a0c044;
+        border-radius: 4px;
+    }
+
+    .ambiente-3 {
+        background-color: #008dd4;
+        border-radius: 4px 76px 4px 4px;
+    }
+
+    .ambiente-4 {
+        background-color: #cb579e;
+        border-radius: 4px 4px 4px 76px;
+    }
+
+    .ambiente-5 {
+        background-color: #02bead;
+        border-radius: 4px;
+    }
+
+    .ambiente-6 {
+        background-color: #a5adbb;
+        border-radius: 4px 4px 76px 4px;
+    }
+}
+
+.div-ead {
+    iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 16px;
+    }
+}
+
+.div-infos {
+    img {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .info-1 {
+        img {
+            border-radius: 60px 4px 4px 60px;
+        }
+    }
+
+    .info-2 {
+        img {
+            border-radius: 4px;
+        }
+    }
+
+    .info-3 {
+        img {
+            border-radius: 4px 60px 60px 4px;
+        }
+    }
+
+    h2 {
+        font-weight: 700;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .btn {
+        background-color: #00446b;
+        color: white;
+        font-size: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.div-noticias {
+    .noticia-1 {
+        background-color: #00446b;
+        border-radius: 48px 48px 4px 4px;
+        overflow: hidden;
+        color: white;
+        margin-bottom: 1.5em;
+
+        .conteudo {
+            padding: 32px;
+        }
+
+        .titulo {
+            font-weight: 400;
+            font-size: 40px;
+        }
+
+        img {
+            width: 420px;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 24px;
+        }
+    }
+
+    .col-6 .noticia {
+        h1 {
+            font-weight: 700;
+            font-size: 32px;
+        }
+
+        img {
+            margin-bottom: 1em;
+        }
+    }
+
+    .noticia-2 {
+        img {
+            border-radius: 4px 4px 4px 48px;
+        }
+    }
+
+    .noticia-3 {
+        img {
+            border-radius: 4px 4px 48px 4px;
+        }
+    }
+
+    .btn {
+        background-color: #00446b;
+        color: white;
+        font-size: 24px;
+    }
+}
+
+.div-contato {
+    margin-top: 108px;
+    margin-bottom: 108px;
+    background-color: #00446b;
+
+    .contato-info {
+        color: white;
+        margin-top: 54px;
+        margin-bottom: 54px;
+
+        h2 {
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        p:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .card {
+        border: 4px solid #00446b;
+        border-radius: 16px;
+        margin-top: -50px;
+        margin-bottom: -50px;
+
+        input,
+        textarea {
+            font-size: 18px;
+            border: 1px solid #262626;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn {
+            background-color: #00446b;
+            color: white;
+            font-size: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        h1 {
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ambiente-2 {
+        border-radius: 4px 76px 4px 4px !important;
+    }
+
+    .ambiente-3,
+    .ambiente-4 {
+        border-radius: 4px !important;
+    }
+
+    .ambiente-5 {
+        border-radius: 4px 4px 4px 76px !important;
+    }
+
+    .noticia:not(.noticia-1){
+        flex-direction: column;
+        img{
+            aspect-ratio: 2 / 1 !important;
+            border-radius: 24px !important;
+        }
+    }
+
+    .div-infos {
+        img {
+            border-radius: 24px !important;
+            aspect-ratio: 7 / 3;
+        }
+    }
+
+    .div-noticias {
+        .noticia-1 {
+            border-radius: 16px !important;
+
+            img {
+                width: 240px;
+                height: 240px;
+            }
+
+            .titulo {
+                font-size: 26px;
+            }
+
+            .link {
+                font-size: 20px;
+            }
+        }
+
+        .noticia:not(.noticia-1) {
+            display: flex;
+            gap: 20px;
+
+            img {
+                aspect-ratio: 5 / 3;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+
+            .titulo {
+                font-weight: 700;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .div-contato {
+        .d-flex {
+            flex-direction: column;
+        }
+
+        .contato-info {
+            display: flex;
+            gap: 80px;
+            order: 2;
+
+            .contato-dado {
+                width: 33%;
+            }
+
+            .titulo {
+                font-size: 24px;
+            }
+
+            .texto {
+                font-size: 16px;
+            }
+        }
+
+        .card {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .ambiente{
+        border-radius: 16px !important;
+    }
+}
