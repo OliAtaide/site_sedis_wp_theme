@@ -1,5 +1,12 @@
 <?php /* Template Name: Sobre */
 get_header();
+
+
+$json = file_get_contents(get_theme_file_uri() . '/json/sobre.json');
+
+// Decode the JSON file
+$json_data = json_decode($json, true);
+
 ?>
 
 
@@ -72,19 +79,22 @@ get_header();
         <h1>Serviços</h1>
         <hr>
         <div class="row">
-            <div class="col-sm-6 col-lg-4">
-                <div class="card card-servico">
-                    <div class="card-body d-flex">
-                        <span class="material-symbols-outlined">
-                            school
-                        </span>
-                        <span>
-                            Calendário acadêmico (Bacharelado) - 2023.1
-                        </span>
-                    </div>
+            <?php foreach ($json_data['servicos'] as $servico): ?>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <a class="link-servico" href="<?php echo $servico['href'] ?>">
+                        <div class="card card-servico">
+                            <div class="card-body d-flex">
+                                <span class="mdi <?php echo $servico['icone'] ?>"></span>
+                                <span>
+                                    <?php echo $servico['texto'] ?>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
+            <?php endforeach ?>
         </div>
+
     </div>
 </div>
 <div class="div-materiais py-5">
@@ -99,7 +109,7 @@ get_header();
         <div class="row">
             <div class="col-sm-6">
                 <div class="d-flex justify-content-center">
-                    <img src="imgs/reading.svg" alt="" class="img-fluid">
+                    <img src="<?php echo get_theme_file_uri() . '/imgs/reading.svg' ?>" alt="" class="img-fluid">
                 </div>
                 <h5>
                     Editoração Impressa
@@ -111,7 +121,7 @@ get_header();
             </div>
             <div class="col-sm-6">
                 <div class="d-flex justify-content-center">
-                    <img src="imgs/ebook.svg" alt="" class="img-fluid">
+                    <img src="<?php echo get_theme_file_uri() . '/imgs/ebook.svg' ?>" alt="" class="img-fluid">
                 </div>
                 <h5>
                     E-books
@@ -123,7 +133,7 @@ get_header();
             </div>
             <div class="col-sm-6">
                 <div class="d-flex justify-content-center">
-                    <img src="imgs/press.svg" alt="" class="img-fluid">
+                    <img src="<?php echo get_theme_file_uri() . '/imgs/press.svg' ?>" alt="" class="img-fluid">
                 </div>
                 <h5>
                     Audiovisual
@@ -136,7 +146,7 @@ get_header();
             </div>
             <div class="col-sm-6">
                 <div class="d-flex justify-content-center">
-                    <img src="imgs/files.svg" alt="" class="img-fluid">
+                    <img src="<?php echo get_theme_file_uri() . '/imgs/files.svg' ?>" alt="" class="img-fluid">
                 </div>
                 <h5>
                     Digitais e Interativos

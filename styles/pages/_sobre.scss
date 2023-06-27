@@ -1,5 +1,13 @@
-.div-sobre, .div-materiais, .div-apoio, .div-perguntas{
+.div-sobre,
+.div-materiais,
+.div-apoio,
+.div-perguntas {
     background-color: white;
+}
+
+.link-servico {
+    color: inherit;
+    text-decoration: none;
 }
 
 .card-servico {
@@ -8,15 +16,23 @@
     outline: none;
     font-weight: 700;
     font-size: 18px;
+    aspect-ratio: 3/1;
 
     .card-body {
         gap: 8px;
         align-items: center;
         font-size: 18px;
+        gap: 0.5em;
+
+        .mdi {
+            color: #00446b;
+            font-size: 20px;
+        }
     }
 }
 
-.div-apoio, .div-perguntas{
+.div-apoio,
+.div-perguntas {
     .collapse-field button {
         border-bottom: 2px solid #36a9e1;
         font-weight: 700;
@@ -46,8 +62,6 @@
         outline: none;
     }
 
-    
-
     .tab-pane .d-flex {
         gap: 20px;
     }
@@ -69,29 +83,29 @@
     }
 }
 
-.social-icones{
-    i{
+.social-icones {
+    i {
         font-size: 32px;
     }
 }
 
 @media screen and (max-width: 992px) {
-    .div-sobre{
-        .d-flex{
+    .div-sobre {
+        .d-flex {
             flex-direction: column;
             align-items: center;
         }
-        .texto-sobre{
+        .texto-sobre {
             order: 2;
             width: 100% !important;
         }
     }
 
-    .div-apoio{
-        .collapse .d-flex{
+    .div-apoio {
+        .collapse .d-flex {
             flex-direction: column;
 
-            img{
+            img {
                 width: 100% !important;
                 height: auto !important;
                 aspect-ratio: 7 / 5;

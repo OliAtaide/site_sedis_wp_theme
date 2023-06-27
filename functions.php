@@ -5,6 +5,8 @@ function themebs_enqueue_styles()
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
     wp_enqueue_style('core', get_template_directory_uri() . '/style.css');
 
+    wp_enqueue_style('materialdesignicons', 'https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css');
+
     require_once(get_template_directory() . '/bs5navwalker.php');
 }
 

@@ -253,7 +253,6 @@ h1 {
   padding-top: 150px;
   padding-bottom: 150px;
   background-color: #d9e3e9;
-  background-image: url("../../imgs/bg.png");
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: center;
@@ -664,8 +663,16 @@ h1 {
   aspect-ratio: 2/1;
 }
 
-.div-sobre, .div-materiais, .div-apoio, .div-perguntas {
+.div-sobre,
+.div-materiais,
+.div-apoio,
+.div-perguntas {
   background-color: white;
+}
+
+.link-servico {
+  color: inherit;
+  text-decoration: none;
 }
 
 .card-servico {
@@ -674,26 +681,35 @@ h1 {
   outline: none;
   font-weight: 700;
   font-size: 18px;
+  aspect-ratio: 3/1;
 }
 .card-servico .card-body {
   gap: 8px;
   align-items: center;
   font-size: 18px;
+  gap: 0.5em;
+}
+.card-servico .card-body .mdi {
+  color: #00446b;
+  font-size: 20px;
 }
 
-.div-apoio .collapse-field button, .div-perguntas .collapse-field button {
+.div-apoio .collapse-field button,
+.div-perguntas .collapse-field button {
   border-bottom: 2px solid #36a9e1;
   font-weight: 700;
   font-size: 20px;
   text-align: start;
   border-radius: 0;
 }
-.div-apoio .collapse-field button::after, .div-perguntas .collapse-field button::after {
+.div-apoio .collapse-field button::after,
+.div-perguntas .collapse-field button::after {
   font-family: "bootstrap-icons";
   content: "\f235";
   float: right;
 }
-.div-apoio .collapse-field button.collapsed::after, .div-perguntas .collapse-field button.collapsed::after {
+.div-apoio .collapse-field button.collapsed::after,
+.div-perguntas .collapse-field button.collapsed::after {
   content: "\f229";
 }
 
@@ -782,8 +798,19 @@ footer li {
   margin-bottom: 8px;
 }
 footer a {
-  color: white;
+  color: white !important;
   text-decoration: none;
+}
+footer .social-icones {
+  margin-top: 2em;
+  display: flex;
+  gap: 28px;
+}
+footer .social-icones .btn {
+  padding: 0;
+}
+footer .social-icones i {
+  font-size: 28px !important;
 }
 
 * {

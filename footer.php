@@ -3,17 +3,42 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <img src="imgs/logo.svg" alt="">
-                <p>© 2023 Secretaria de educação a distância</p>
+                <img src="<?php echo get_template_directory_uri() . '/imgs/logo.svg' ?>" alt="">
+                <br>
+                <span>© 2023 Secretaria de educação a distância</span>
                 <ul>
                     <li>
-                        <a href="">Termos</a>
+                        <a href="">
+                            Contato
+                        </a>
                     </li>
                     <li>
-                        <a href="">Privacidade</a>
+                        <a href="">
+                            Termos
+                        </a>
                     </li>
                     <li>
-                        <a href="">Acessibilidade</a>
+                        <a href="">
+                            Privacidade
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Acessibilidade
+                        </a>
+                    </li>
+                    <li>
+                        <div class="social-icones">
+                            <a href="" class="btn">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="" class="btn">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="" class="btn">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>

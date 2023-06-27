@@ -1,0 +1,44 @@
+{
+    "servicos":[
+        {
+            "icone":"mdi-account-school",
+            "texto":"Calendário acadêmico (Bacharelado) - 2023.1",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-account-school",
+            "texto":"Calendário acadêmico (Licenciatura) - 2023.1",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-human",
+            "texto":"Carta de acessibilidade",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-book",
+            "texto":"Acervo",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-list-box-outline",
+            "texto":"SEDIS Seleções",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-wallet-travel",
+            "texto":"SEDIS Viagem",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-help-circle-outline",
+            "texto":"SEDIS Solicitação",
+            "href":"#"
+        },
+        {
+            "icone":"mdi-laptop",
+            "texto":"SEDIS EAD",
+            "href":"#"
+        }
+    ]
+}

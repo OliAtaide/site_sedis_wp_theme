@@ -16,7 +16,20 @@ footer {
     }
 
     a {
-        color: white;
+        color: white !important;
         text-decoration: none;
+    }
+
+    .social-icones{
+        margin-top: 2em;
+        display: flex;
+        gap: 28px;
+
+        .btn{
+                padding: 0;
+        }
+        i{
+            font-size: 28px !important;
+        }
     }
 }

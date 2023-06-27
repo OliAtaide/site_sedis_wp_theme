@@ -2,7 +2,8 @@
 get_header();
 ?>
 
-<div class="div-cabecalho">
+<div class="div-cabecalho"
+    style='background-image: url("<?php echo get_template_directory_uri() . '/imgs/bg.png' ?>");'>
     <div class="container">
         <div class="titulo">
             Secretaria de educação a distância - UFRN
@@ -120,7 +121,7 @@ get_header();
         <div class="row">
             <div class="col-lg">
                 <div class="info info-1">
-                    <img src="imgs/ph.png" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" class="img-fluid">
                     <h2>
                         Cursos
                     </h2>
@@ -134,29 +135,29 @@ get_header();
             </div>
             <div class="col-lg">
                 <div class="info info-2">
-                    <img src="imgs/ph.png" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" class="img-fluid">
                     <h2>
-                        Cursos
+                        Editais
                     </h2>
                     <p>
-                        Estude no seu próprio ritmo, em qualquer lugar e a qualquer hora
+                        Fique por dentro das últimas seleções para fazer parte da nossa equipe
                     </p>
                     <button class="btn">
-                        Ver cursos
+                        Ver editais
                     </button>
                 </div>
             </div>
             <div class="col-lg">
                 <div class="info info-3">
-                    <img src="imgs/ph.png" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" class="img-fluid">
                     <h2>
-                        Cursos
+                        Acervo
                     </h2>
                     <p>
-                        Estude no seu próprio ritmo, em qualquer lugar e a qualquer hora
+                        Veja aqui alguns dos trabalhos desenvolvidos pela secretaria
                     </p>
                     <button class="btn">
-                        Ver cursos
+                        Ver acervo
                     </button>
                 </div>
             </div>
@@ -173,7 +174,7 @@ get_header();
         <div class="row">
             <div class="col-12">
                 <div class="noticia noticia-1 d-flex">
-                    <img src="imgs/ph.png" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" alt="">
                     <div class="conteudo d-flex flex-column">
                         <p class="data">
                             28 de Março de 2023
@@ -189,7 +190,7 @@ get_header();
             </div>
             <div class="col-lg-6">
                 <div class="noticia noticia-2">
-                    <img src="imgs/ph.png" alt="" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" alt="" class="img-fluid">
                     <div>
                         <h1 class="titulo my-3">
                             [ATUALIZAÇÃO] UFRN suspende atividades presenciais
@@ -205,7 +206,7 @@ get_header();
             </div>
             <div class="col-lg-6">
                 <div class="noticia noticia-3">
-                    <img src="imgs/ph.png" alt="" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" alt="" class="img-fluid">
                     <div class="">
                         <h1 class="titulo my-3">
                             Entrevistas referentes à Chamada Pública 001/2023 são suspensas

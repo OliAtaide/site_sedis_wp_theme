@@ -16,16 +16,18 @@
             </a>
             <?php
             // Primary navigation menu.
-            wp_nav_menu( array(
-                'theme_location'  => 'header-menu',
-                'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-                'container'       => 'div',
-                'container_class' => 'collapse navbar-collapse',
-                'container_id'    => 'bs-example-navbar-collapse-1',
-                'menu_class'      => 'navbar-nav ms-auto mb-2 mb-lg-0',
-                'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                'walker'          => new WP_Bootstrap_Navwalker(),
-            ) );
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'header-menu',
+                    'depth' => 2,
+                    // 1 = no dropdowns, 2 = with dropdowns.
+                    'container' => 'div',
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id' => 'bs-example-navbar-collapse-1',
+                    'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
+                    'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker' => new WP_Bootstrap_Navwalker(),
+                ));
             ?>
             <form class="d-flex ms-auto me-4" role="search">
                 <input class="form-control me-2 d-none" type="search" placeholder="Search" aria-label="Search">
