@@ -1,5 +1,12 @@
 <?php /* Template Name: Noticias */
 get_header();
+
+$noticias = get_posts(
+    array(
+        'numberposts'       => -1,
+        'cat' => 'Noticia'
+    )
+);
 ?>
 
 <div class="div-noticia-destaque py-5">
@@ -8,50 +15,20 @@ get_header();
             Em destaque
         </h1>
         <hr>
+
         <div class="d-flex noticia-destaque">
-            <img src="imgs/ph.png" alt="">
+            <img src="<?php echo get_theme_file_uri() . '/imgs/ph.png' ?>" alt="">
             <div class="noticia-destaque-info">
-                <p class="data">28 de Março de 2023</p>
+                <p class="data">
+                    <?php echo $noticias[0]->post_date; ?>
+                </p>
                 <h1 class="titulo">
-                    Autor da teoria da objetivação visita a SEDIS/UFRN
+                    <?php echo $noticias[0]->post_title; ?>
                 </h1>
                 <p class="texto">
-                    O professor doutor Luís Radford nasceu na Guatemala, país da América Central, mas foi nos bancos
-                    acadêmicos da Laurentian University, em Ontário, no Canadá, onde ele ganhou projeção
-                    internacional a partir de suas pesquisas que culminaram com a formulação da Teoria da
-                    Objetivação (TO). Em visita à Secretaria de Educação a Distância (SEDIS/UFRN), nesta terça-feira
-                    (28), onde foi recebido pela Secretária da EaD/UFRN, Carmem Rêgo, o pesquisador falou sobre os
-                    principais aspectos da TO.
-                    <br>
-                    De acordo com Radford, “a Teoria da Objetivação nasce como alternativa às correntes atuais, na
-                    medida em que parte do fato que a educação não é, simplesmente, uma aquisição de saberes, mas
-                    também a produção de subjetividades, da produção de sujeitos críticos, éticos e responsáveis”.
-                    Ainda segundo o pesquisador em educação matemática, não é possível olhar apenas para o aspecto
-                    instrumental do ensino e da aprendizagem e deixar de lado a dimensão humana.
-                    <br>
-                    No livro “Teoria da Objetivação: Fundamentos e Aplicações para o Ensino e Aprendizagem de
-                    Ciências e Matemática”, produzido por Radford em parceria com a professora e pesquisadora da
-                    Universidade Federal do Mato Grosso do Sul (UFMS), Shirley Takeco Gobara, que também visitou a
-                    SEDIS/UFRN, são apresentados recortes de estudos investigativos, os quais exemplifi­cam as
-                    aplicações dessa teoria para o ensino e a aprendizagem de Ciências e Matemática. Mas, outras
-                    áreas do conhecimento começam a se apropriar desses conceitos e os aplicar no cotidiano do
-                    ambiente escolar e na formação de professores.
-                    <br>
-                    A professora do Programa de Pós-Graduação em Ensino de Ciências e Matemática (PPGECM), do Centro
-                    de Ciências Exatas e da Terra (CCET/UFRN), Claudianny Noronha, esclareceu que a vinda do
-                    professor Luis Radford ao Brasil faz parte de uma série de atividades que marca o fortalecimento
-                    das ações da Rede Internacional de Colaboração Acadêmica em Teoria da Objetivação (Ricto), que
-                    reúne representantes do Brasil, do México, da Colômbia, da Venezuela, do Chile e do Canadá e que
-                    prevê a produção de estudos conjuntos sobre a realidade escolar em distintos níveis e sistemas
-                    de escolarização nos diferentes países.
-                    <br>
-                    Carmem Rêgo agradeceu a visita e colocou os estúdios da SEDIS/UFRN à disposição para a gravação
-                    de um videocast que será publicado no YouTube como parte do Projeto “Conversa Com o Professor”,
-                    uma iniciativa do Grupo de Pesquisa Contar, do qual a SEDIS/UFRN é parceira em diversas
-                    iniciativas. Em breve, o conteúdo audiovisual estará disponível nos canais do Contar e da
-                    SEDIS/UFRN.
+                    <?php echo apply_filters('the_content', $noticias[0]->post_content); ?>
                 </p>
-                <a href="">
+                <a href="<?php echo get_the_permalink($noticias[0]); ?>">
                     Saiba Mais
                 </a>
             </div>
@@ -82,15 +59,16 @@ get_header();
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-lg-4">
+            <?php for ($i=1; $i < count($noticias); $i++): ?>
+            <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card card-noticia">
                     <div class="card-body d-flex flex-column">
                         <div class="data">
-                            14 de março de 2023
+                            <?php echo $noticias[$i]->post_date; ?>
                         </div>
-                        <img src="imgs/ph.png" class="card-img" alt="">
+                        <img src="<?php echo get_theme_file_uri() . '/imgs/ph.png' ?>" class="card-img" alt="">
                         <h6 class="card-title">
-                            Suspensão de aulas
+                            <?php echo $noticias[$i]->post_title; ?>
                         </h6>
                         <p class="card-text">
                             A Universidade Federal do Rio Grande do Norte (UFRN) informa que as atividades
@@ -105,6 +83,7 @@ get_header();
                     </div>
                 </div>
             </div>
+            <?php endfor; ?>
         </div>
         <div class="d-flex">
             <div class="btn btn-vermais mx-auto">

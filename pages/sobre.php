@@ -166,6 +166,9 @@ $json_data = json_decode($json, true);
         <p>
             Conheça nossa sede principal
         </p>
+        <iframe width="600" height="500" id="gmap_canvas"
+            src="https://maps.google.com/maps?q=sedis&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
 </div>
 <div class="div-apoio py-5">

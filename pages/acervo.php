@@ -64,9 +64,7 @@ get_header();
                     </form>
                 </div>
                 <div class="acervo-titulo my-4 d-flex flex-column justify-content-center align-items-center">
-                    <span class="material-symbols-outlined">
-                        potted_plant
-                    </span>
+                    <i data-charm="flame" class="my-class"></i>
                     Biologia
                 </div>
                 <div class="row row-cols-4 align-items-stretch">

@@ -18,6 +18,11 @@ function themebs_enqueue_scripts()
     wp_enqueue_script(
         'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.bundle.min.js'
     );
+
+    wp_enqueue_script(
+        'charm-icons', 'https://unpkg.com/charm-icons@latest'
+    );
+
     wp_enqueue_script(
         'core', get_template_directory_uri() . '/script.js'
     );
