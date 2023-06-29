@@ -1,5 +1,14 @@
 <?php /* Template Name: Editais */
 get_header();
+
+$editais = new WP_Query(
+    array(
+        'numberposts' => -1,
+        'post_type' => 'editais',
+        'posts_per_page' => 9,
+        'paged' => $paged
+    )
+);
 ?>
 
 <div class="div-editais">
@@ -25,58 +34,29 @@ get_header();
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card card-edital card-edital-aberto">
-                    <div class="card-body d-flex flex-column">
-                        <h6 class="mb-0">
-                            Inscrições Abertas
-                        </h6>
-                        <hr>
-                        <p class="titulo">
-                            Edital 06/2023 – Seleção para o cargo de Professor(a) Formador(a) I e II do Sistema UAB
-                            e UFRN – Ciência é Dez
-                        </p>
-                        <p class="data mt-auto">
-                            12 de maio de 2023
-                        </p>
+            <?php if ($editais->have_posts()):
+                while ($editais->have_posts()):
+                    $editais->the_post();
+                    ?>
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <div class="card card-edital card-edital-aberto">
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="mb-0">
+                                    Inscrições Abertas
+                                </h6>
+                                <hr>
+                                <p class="titulo">
+                                    <?php the_title(); ?>
+                                </p>
+                                <p class="data mt-auto">
+                                    12 de maio de 2023
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card card-edital card-edital-andamento">
-                    <div class="card-body d-flex flex-column">
-                        <h6 class="mb-0">
-                            Em andamento
-                        </h6>
-                        <hr>
-                        <p class="titulo">
-                            Edital 06/2023 – Seleção para o cargo de Professor(a) Formador(a) I e II do Sistema UAB
-                            e UFRN – Ciência é Dez
-                        </p>
-                        <p class="data mt-auto">
-                            12 de maio de 2023
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card card-edital card-edital-concluido">
-                    <div class="card-body d-flex flex-column">
-                        <h6 class="mb-0">
-                            Concluído
-                        </h6>
-                        <hr>
-                        <p class="titulo">
-                            Edital 06/2023 – Seleção para o cargo de Professor(a) Formador(a) I e II do Sistema UAB
-                            e UFRN – Ciência é Dez
-                        </p>
-                        <p class="data mt-auto">
-                            12 de maio de 2023
-                        </p>
-                    </div>
-                </div>
-            </div>
+                <?php endwhile; endif; ?>
         </div>
+        <!--
         <nav>
             <ul class="pagination justify-content-center">
                 <li class="page-item active mx-2">
@@ -96,7 +76,32 @@ get_header();
                 </li>
             </ul>
         </nav>
+                -->
+        <div class="pagination d-flex justify-content-center">
+            <?php
+            echo paginate_links(
+                array(
+                    'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                    'total' => $editais->max_num_pages,
+                    'current' => max(1, get_query_var('paged')),
+                    'format' => '?paged=%#%',
+                    'show_all' => false,
+                    'type' => 'plain',
+                    'end_size' => 2,
+                    'mid_size' => 1,
+                    'prev_next' => true,
+                    // 'prev_text' => sprintf('<i></i> %1$s', __('Newer Posts', 'text-domain')),
+                    // 'next_text' => sprintf('%1$s <i></i>', __('Older Posts', 'text-domain')),
+                    'prev_text' => false,
+                    'next_text' => false,
+                    'add_args' => false,
+                    'add_fragment' => '',
+                )
+            );
+            ?>
+        </div>
     </div>
+
 </div>
 
 <?php get_footer(); ?>

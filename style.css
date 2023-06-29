@@ -35,7 +35,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   outline: none;
 }
 
-.pagination .page-item .page-link {
+.pagination .page-item .page-link, .pagination .page-numbers {
   border: 0;
   outline: none;
   border-radius: 8px;
@@ -44,8 +44,12 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   color: #036B8A;
   font-weight: 600;
   background-color: transparent;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.pagination .page-item.active .page-link {
+.pagination .page-item.active .page-link, .pagination .page-numbers.current {
   background-color: #E2F3FF;
 }
 
@@ -562,6 +566,14 @@ h1 {
 }
 .div-noticia-ultimas .card-noticia .card-title {
   font-weight: 600;
+}
+.div-noticia-ultimas .card-noticia .card-text {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .div-noticia-ultimas .card-noticia .tags a {
   color: #36a9e1;

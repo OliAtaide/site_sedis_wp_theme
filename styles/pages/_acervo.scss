@@ -23,7 +23,7 @@
 }
 
 .pagination{
-    .page-item .page-link{
+    .page-item .page-link, .page-numbers{
         border: 0;
         outline: none;
         border-radius: 8px;
@@ -32,9 +32,15 @@
         color:#036B8A;
         font-weight: 600;
         background-color: transparent;
+
+        // wp_query pagination
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .page-item.active .page-link{
+    .page-item.active .page-link, .page-numbers.current{
         background-color: #E2F3FF;
     }
 }

@@ -3,7 +3,7 @@ get_header();
 
 $noticias = get_posts(
     array(
-        'numberposts'       => -1,
+        'numberposts' => -1,
         'cat' => 'Noticia'
     )
 );
@@ -17,7 +17,7 @@ $noticias = get_posts(
         <hr>
 
         <div class="d-flex noticia-destaque">
-            <img src="<?php echo get_theme_file_uri() . '/imgs/ph.png' ?>" alt="">
+            <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($noticias[0]->ID), 'thumbnail' ); ?>" alt="">
             <div class="noticia-destaque-info">
                 <p class="data">
                     <?php echo $noticias[0]->post_date; ?>
@@ -25,9 +25,9 @@ $noticias = get_posts(
                 <h1 class="titulo">
                     <?php echo $noticias[0]->post_title; ?>
                 </h1>
-                <p class="texto">
+                <span class="texto">
                     <?php echo apply_filters('the_content', $noticias[0]->post_content); ?>
-                </p>
+                </span>
                 <a href="<?php echo get_the_permalink($noticias[0]); ?>">
                     Saiba Mais
                 </a>
@@ -59,30 +59,36 @@ $noticias = get_posts(
             </div>
         </div>
         <div class="row">
-            <?php for ($i=1; $i < count($noticias); $i++): ?>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card card-noticia">
-                    <div class="card-body d-flex flex-column">
-                        <div class="data">
-                            <?php echo $noticias[$i]->post_date; ?>
-                        </div>
-                        <img src="<?php echo get_theme_file_uri() . '/imgs/ph.png' ?>" class="card-img" alt="">
-                        <h6 class="card-title">
-                            <?php echo $noticias[$i]->post_title; ?>
-                        </h6>
-                        <p class="card-text">
-                            A Universidade Federal do Rio Grande do Norte (UFRN) informa que as atividades
-                            acadêmicas e administrativas estão suspensas nesta terça-feira, 14, até as 12h da
-                            quarta-feira, 15, em todos os seus campi, em virtude da redução da oferta de transporte
-                        </p>
-                        <div class="tags mt-auto">
-                            <strong>Categorias:</strong>
-                            <a href="">noticias</a>,
-                            <a href="">UFRN</a>
+            <?php for ($i = 1; $i < count($noticias); $i++): ?>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card card-noticia">
+                        <div class="card-body d-flex flex-column">
+                            <div class="data">
+                                <?php echo $noticias[$i]->post_date; ?>
+                            </div>
+                            <a href="<?php echo $noticias[$i]->post_name; ?>">
+                                <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($noticias[$i]->ID), 'thumbnail' ); ?>" class="card-img" alt="">
+                            </a>
+                            <h6 class="card-title">
+                                <?php echo $noticias[$i]->post_title; ?>
+                            </h6>
+                            <span class="card-text">
+                                <?php echo apply_filters('the_content', $noticias[$i]->post_content); ?>
+                            </span>
+                            <div class="tags mt-auto">
+                                <strong>Categorias:</strong>
+                                <?php
+                                $cat = wp_get_post_categories($noticias[$i]->ID, array('fields' => 'all'));
+                                foreach ($cat as $c):
+                                    ?>
+                                    <a href="<?php echo '/category/' . $c->name ?>">
+                                        <?php echo $c->name ?>
+                                    </a>,
+                                <?php endforeach ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <?php endfor; ?>
         </div>
         <div class="d-flex">
