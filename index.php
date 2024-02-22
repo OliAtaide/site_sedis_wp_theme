@@ -14,15 +14,15 @@ get_header();
         <div class="texto">
             Estude hoje, conquiste amanhã: seu futuro melhor começa agora!
         </div>
-        <button class="btn btn-cursos px-4">
+        <a class="btn btn-cursos px-4" href="/cursos">
             Ver cursos
-        </button>
+        </a>
         <div class="texto">
             Deseja fazer parte da nossa equipe?
         </div>
-        <button class="btn btn-editais px-0">
+        <a class="btn btn-editais px-0" href="/concursos">
             Editais abertos
-        </button>
+        </a>
     </div>
 </div>
 <div class="py-5 div-aprendizado ">
@@ -77,7 +77,10 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-lg">
-                <iframe src="https://www.youtube.com/embed/qwxZU0VkWII?enablejsapi=1" title="Meow"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BefJHyO9_E4?si=0MzVtaPtfYuuBgU6"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
             <div class="col-lg">
                 <h1>
@@ -121,35 +124,35 @@ get_header();
         <div class="row">
             <div class="col-lg">
                 <div class="info info-1">
-                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/1.jpeg' ?>" class="img-fluid">
                     <h2>
                         Cursos
                     </h2>
                     <p>
                         Estude no seu próprio ritmo, em qualquer lugar e a qualquer hora
                     </p>
-                    <button class="btn">
+                    <a class="btn" href="/cursos">
                         Ver cursos
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="col-lg">
                 <div class="info info-2">
-                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/2.jpeg' ?>" class="img-fluid">
                     <h2>
                         Editais
                     </h2>
                     <p>
                         Fique por dentro das últimas seleções para fazer parte da nossa equipe
                     </p>
-                    <button class="btn">
+                    <a class="btn" href="/concursos">
                         Ver editais
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="col-lg">
                 <div class="info info-3">
-                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/imgs/3.jpeg' ?>" class="img-fluid">
                     <h2>
                         Acervo
                     </h2>
@@ -172,57 +175,57 @@ get_header();
             Confira as novidades relacionadas à SEDIS e às suas parcerias
         </p>
         <div class="row">
-            <div class="col-12">
-                <div class="noticia noticia-1 d-flex">
-                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" alt="">
-                    <div class="conteudo d-flex flex-column">
-                        <p class="data">
-                            28 de Março de 2023
-                        </p>
-                        <p class="titulo">
-                            Autor da teoria da objetivação visita a SEDIS/UFRN
-                        </p>
-                        <a href="" class="mt-auto link">
-                            Saiba Mais
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="noticia noticia-2">
-                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" alt="" class="img-fluid">
-                    <div>
-                        <h1 class="titulo my-3">
-                            [ATUALIZAÇÃO] UFRN suspende atividades presenciais
-                        </h1>
-                        <p>
-                            Tendo em vista a nova suspensão do serviço de transporte público, realizada no final
-                            da
-                            manhã de hoje, e visando à preservação da segurança da comunidade universitária, a
-                            Universidade Federal do Rio Grande do Norte (UFRN) informa que as atividades
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="noticia noticia-3">
-                    <img src="<?php echo get_template_directory_uri() . '/imgs/ph.png' ?>" alt="" class="img-fluid">
-                    <div class="">
-                        <h1 class="titulo my-3">
-                            Entrevistas referentes à Chamada Pública 001/2023 são suspensas
-                        </h1>
-                        <p>
-                            A banca examinadora, responsável por coordenar a Seleção Simplificada de Estudantes
-                            para
-                            Atuação como Bolsistas de Apoio Técnico, no Polo de Apoio Presencial de Nova
-                            Cruz/RN,
-                            decidiu suspender as entrevistas que estavam agendadas para esta quarta-feira (15),
-                            como
-                            etapa...
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <?php
+            $news_query = new WP_Query(
+                array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 3,
+                )
+            );
+            if ($news_query->have_posts()):
+                while ($news_query->have_posts()):
+                    $news_query->the_post();
+                    $is_1st = $news_query->current_post == 0;
+                    if ($is_1st):
+                        ?>
+                        <div class="col-12">
+                            <a href="<?= the_permalink() ?>">
+                                <div class="noticia noticia-1 d-flex">
+                                    <img src="<?= the_post_thumbnail_url() ?>" alt="">
+                                    <div class="conteudo d-flex flex-column">
+                                        <p class="data">
+                                            <?php the_date() ?>
+                                        </p>
+                                        <p class="titulo">
+                                            <?php the_title() ?>
+                                        </p>
+                                        <a href="" class="mt-auto link">
+                                            Saiba Mais
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php else: ?>
+                        <div class="col-lg-6">
+                            <a href="<?= the_permalink() ?>" class="text-black">
+                                <div class="noticia noticia-<?= $news_query->current_post + 1 ?>">
+                                    <img src="<?= the_post_thumbnail_url() ?>" alt="" class="">
+                                    <div>
+                                        <h1 class="titulo my-3">
+                                            <?php the_title() ?>
+                                        </h1>
+                                        <div class="texto">
+                                            <?php the_excerpt() ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <?php
+                    endif;
+                endwhile;
+            endif; ?>
         </div>
         <div class="d-flex">
             <a href="" class="btn ms-auto">
@@ -231,73 +234,9 @@ get_header();
         </div>
     </div>
 </div>
-<div class="div-contato">
-    <div class="container">
-        <div class="d-flex">
-            <div class="contato-info">
-                <div class="contato-dado">
-                    <h2 class="titulo">
-                        <span class="material-symbols-outlined">
-                            call
-                        </span>
-                        Telefone
-                    </h2>
-                    <p class="texto">
-                        +55 (84) 3342-2250
-                    </p>
-                </div>
-                <div class="contato-dado">
-                    <h2 class="titulo">
-                        <span class="material-symbols-outlined">
-                            mail
-                        </span>
-                        E-mail
-                    </h2>
-                    <p class="texto">
-                        secretaria.sedis.ufrn@gmail.com
-                    </p>
-                </div>
-                <div class="contato-dado">
-                    <h2 class="titulo">
-                        <span class="material-symbols-outlined">
-                            location_on
-                        </span>
-                        Endereço
-                    </h2>
-                    <p class="texto">
-                        SEDIS - UFRN - Campus Universitário - Praça Cívica - Natal/RN - CEP 59.078-970
-                    </p>
-                </div>
-                <div class="contato-dado">
-                    <h2 class="titulo">
-                        <span class="material-symbols-outlined">
-                            nest_clock_farsight_analog
-                        </span>
-                        Atendimento
-                    </h2>
-                    <p class="texto">
-                        08:00 às 17:00
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Contato</h1>
-                    <p>
-                        Preencha o formulário abaixo para entrar em contato conosco
-                    </p>
-                    <form action="">
-                        <input type="email" class="form-control p-3 my-3" placeholder="E-mail">
-                        <input type="text" class="form-control p-3 my-3" placeholder="Assunto">
-                        <textarea name="" id="" class="form-control p-3 my-3" placeholder="Mensagem"></textarea>
-                        <button type="submit" class="btn">
-                            Enviar
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+get_template_part('/parts/contato')
+    ?>
+
 
 <?php get_footer(); ?>

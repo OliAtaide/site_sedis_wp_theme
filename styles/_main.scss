@@ -19,3 +19,19 @@ body {
 main {
     min-height: 100vh;
 }
+
+a{
+    text-decoration: none;
+    
+    .card{
+        color: black;
+    }
+}
+
+.border-primary{
+    border-color: #00446B !important;
+    color: #00446B !important;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 24px;
+}

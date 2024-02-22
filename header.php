@@ -23,7 +23,7 @@
                     // 1 = no dropdowns, 2 = with dropdowns.
                     'container' => 'div',
                     'container_class' => 'collapse navbar-collapse',
-                    'container_id' => 'bs-example-navbar-collapse-1',
+                    'container_id' => 'bs-navbar-collapse',
                     'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
                     'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
                     'walker' => new WP_Bootstrap_Navwalker(),
@@ -36,7 +36,7 @@
                 </button>
             </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                data-bs-target="#bs-navbar-collapse" aria-controls="bs-navbar-collapse" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

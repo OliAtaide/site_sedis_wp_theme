@@ -69,7 +69,7 @@ $json_data = json_decode($json, true);
                 </span>
             </div>
             <div class="d-flex align-items-center justify-content-center w-50">
-                <img src="imgs/about_us.svg" alt="">
+                <img src="<?php echo get_theme_file_uri() . '/imgs/about_us.svg'?>" alt="">
             </div>
         </div>
     </div>

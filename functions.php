@@ -6,10 +6,10 @@ function themebs_enqueue_styles()
     wp_enqueue_style('core', get_template_directory_uri() . '/style.css');
 
     wp_enqueue_style('materialdesignicons', 'https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css');
+    wp_enqueue_style('googleicons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
     require_once(get_template_directory() . '/bs5navwalker.php');
 }
-
 add_action('wp_enqueue_scripts', 'themebs_enqueue_styles');
 
 function themebs_enqueue_scripts()

@@ -3,7 +3,6 @@ get_header();
 
 $editais = new WP_Query(
     array(
-        'numberposts' => -1,
         'post_type' => 'editais',
         'posts_per_page' => 9,
         'paged' => $paged
@@ -39,20 +38,7 @@ $editais = new WP_Query(
                     $editais->the_post();
                     ?>
                     <div class="col-sm-6 col-lg-4 mb-4">
-                        <div class="card card-edital card-edital-aberto">
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="mb-0">
-                                    Inscrições Abertas
-                                </h6>
-                                <hr>
-                                <p class="titulo">
-                                    <?php the_title(); ?>
-                                </p>
-                                <p class="data mt-auto">
-                                    12 de maio de 2023
-                                </p>
-                            </div>
-                        </div>
+                        <?php get_template_part('/parts/edital') ?>
                     </div>
                 <?php endwhile; endif; ?>
         </div>

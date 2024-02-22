@@ -306,30 +306,25 @@ h1 {
   padding: 32px;
   margin-bottom: 1em;
   font-weight: 400;
+  border-radius: 4px;
 }
 .ambientes .ambiente-1 {
   background-color: #ff8a00;
-  border-radius: 76px 4px 4px 4px;
 }
 .ambientes .ambiente-2 {
   background-color: #a0c044;
-  border-radius: 4px;
 }
 .ambientes .ambiente-3 {
   background-color: #008dd4;
-  border-radius: 4px 76px 4px 4px;
 }
 .ambientes .ambiente-4 {
   background-color: #cb579e;
-  border-radius: 4px 4px 4px 76px;
 }
 .ambientes .ambiente-5 {
   background-color: #02bead;
-  border-radius: 4px;
 }
 .ambientes .ambiente-6 {
   background-color: #a5adbb;
-  border-radius: 4px 4px 76px 4px;
 }
 
 .div-ead iframe {
@@ -338,6 +333,9 @@ h1 {
   border-radius: 16px;
 }
 
+.div-infos .row {
+  gap: 2em;
+}
 .div-infos img {
   object-fit: cover;
   width: 100%;
@@ -396,6 +394,11 @@ h1 {
 }
 .div-noticias .col-6 .noticia img {
   margin-bottom: 1em;
+}
+.div-noticias .noticia-2 img,
+.div-noticias .noticia-3 img {
+  width: 100%;
+  aspect-ratio: 5/3;
 }
 .div-noticias .noticia-2 img {
   border-radius: 4px 4px 4px 48px;
@@ -457,34 +460,39 @@ h1 {
   font-size: 20px;
 }
 
-@media screen and (max-width: 992px) {
-  .ambiente-2 {
-    border-radius: 4px 76px 4px 4px !important;
-  }
-  .ambiente-3,
-  .ambiente-4 {
-    border-radius: 4px !important;
-  }
-  .ambiente-5 {
-    border-radius: 4px 4px 4px 76px !important;
-  }
+@media screen and (max-width: 768px) {
   .noticia:not(.noticia-1) {
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .noticia:not(.noticia-1) img {
-    aspect-ratio: 2/1 !important;
-    border-radius: 24px !important;
+    width: 100% !important;
   }
+}
+@media screen and (max-width: 992px) {
   .div-infos img {
     border-radius: 24px !important;
     aspect-ratio: 7/3;
   }
+  .div-noticias .noticia {
+    margin-bottom: 2em !important;
+  }
   .div-noticias .noticia-1 {
     border-radius: 16px !important;
+    height: 240px;
+  }
+  .div-noticias .noticia-1 .conteudo {
+    padding: 20px;
+  }
+  .div-noticias .noticia-1 .data,
+  .div-noticias .noticia-1 .titulo {
+    margin: 0;
   }
   .div-noticias .noticia-1 img {
     width: 240px;
     height: 240px;
+  }
+  .div-noticias .noticia-1 .data {
+    font-size: 16px;
   }
   .div-noticias .noticia-1 .titulo {
     font-size: 26px;
@@ -494,27 +502,32 @@ h1 {
   }
   .div-noticias .noticia:not(.noticia-1) {
     display: flex;
+    flex-direction: row;
     gap: 20px;
   }
   .div-noticias .noticia:not(.noticia-1) img {
-    aspect-ratio: 5/3;
-    border-radius: 8px;
+    width: 240px;
+    height: 180px;
+    border-radius: 8px !important;
     object-fit: cover;
   }
   .div-noticias .noticia:not(.noticia-1) .titulo {
     font-weight: 700;
     font-size: 24px;
+    margin-top: 0 !important;
+  }
+  .div-noticias .noticia:not(.noticia-1) .texto {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .div-contato .d-flex {
     flex-direction: column;
   }
   .div-contato .contato-info {
-    display: flex;
     gap: 80px;
     order: 2;
-  }
-  .div-contato .contato-info .contato-dado {
-    width: 33%;
   }
   .div-contato .contato-info .titulo {
     font-size: 24px;
@@ -522,13 +535,12 @@ h1 {
   .div-contato .contato-info .texto {
     font-size: 16px;
   }
+  .div-contato .card,
+  .div-contato .contato-info {
+    width: 100% !important;
+  }
   .div-contato .card {
     margin-bottom: 0;
-  }
-}
-@media screen and (max-width: 599px) {
-  .ambiente {
-    border-radius: 16px !important;
   }
 }
 .div-noticia-ultimas .row {
@@ -632,6 +644,41 @@ h1 {
     aspect-ratio: unset !important;
   }
 }
+.noticia-related {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.noticia-related .num {
+  color: #36a9e1;
+  font-size: 34px;
+  font-weight: 400;
+  margin-right: 1em;
+  position: relative;
+}
+.noticia-related .num::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 54px;
+  background-color: #00446B;
+  top: -5px;
+  right: -0.5em;
+}
+.noticia-related .titulo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #262626;
+  text-transform: none;
+}
+.noticia-related img {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+  margin-left: auto;
+  border-radius: 24px;
+}
+
 .div-parceiros .card {
   aspect-ratio: 2/1;
   border: 4px solid #00446B;
@@ -854,6 +901,21 @@ body {
 
 main {
   min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+a .card {
+  color: black;
+}
+
+.border-primary {
+  border-color: #00446B !important;
+  color: #00446B !important;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

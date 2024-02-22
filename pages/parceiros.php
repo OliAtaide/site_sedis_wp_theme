@@ -65,5 +65,8 @@ get_header();
         <hr>
     </div>
 </div>
+<?php
+get_template_part( '/parts/contato' )
+?>
 
 <?php get_footer(); ?>

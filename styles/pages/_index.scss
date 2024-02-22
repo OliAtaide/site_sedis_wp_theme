@@ -51,7 +51,7 @@ h1 {
 }
 
 .div-aprendizado,
-.div-infos{
+.div-infos {
     background-color: white;
 }
 
@@ -68,36 +68,37 @@ h1 {
         padding: 32px;
         margin-bottom: 1em;
         font-weight: 400;
+        border-radius: 4px;
     }
 
     .ambiente-1 {
         background-color: #ff8a00;
-        border-radius: 76px 4px 4px 4px;
+        //border-radius: 76px 4px 4px 4px;
     }
 
     .ambiente-2 {
         background-color: #a0c044;
-        border-radius: 4px;
+        //border-radius: 4px;
     }
 
     .ambiente-3 {
         background-color: #008dd4;
-        border-radius: 4px 76px 4px 4px;
+        //border-radius: 4px 76px 4px 4px;
     }
 
     .ambiente-4 {
         background-color: #cb579e;
-        border-radius: 4px 4px 4px 76px;
+        //border-radius: 4px 4px 4px 76px;
     }
 
     .ambiente-5 {
         background-color: #02bead;
-        border-radius: 4px;
+        //border-radius: 4px;
     }
 
     .ambiente-6 {
         background-color: #a5adbb;
-        border-radius: 4px 4px 76px 4px;
+        //border-radius: 4px 4px 76px 4px;
     }
 }
 
@@ -110,6 +111,9 @@ h1 {
 }
 
 .div-infos {
+    .row {
+        gap: 2em;
+    }
     img {
         object-fit: cover;
         width: 100%;
@@ -191,6 +195,14 @@ h1 {
         }
     }
 
+    .noticia-2,
+    .noticia-3 {
+        img {
+            width: 100%;
+            aspect-ratio: 5 / 3;
+        }
+    }
+
     .noticia-2 {
         img {
             border-radius: 4px 4px 4px 48px;
@@ -268,28 +280,17 @@ h1 {
     }
 }
 
-@media screen and (max-width: 992px) {
-    .ambiente-2 {
-        border-radius: 4px 76px 4px 4px !important;
-    }
-
-    .ambiente-3,
-    .ambiente-4 {
-        border-radius: 4px !important;
-    }
-
-    .ambiente-5 {
-        border-radius: 4px 4px 4px 76px !important;
-    }
-
-    .noticia:not(.noticia-1){
-        flex-direction: column;
-        img{
-            aspect-ratio: 2 / 1 !important;
-            border-radius: 24px !important;
+@media screen and (max-width: 768px) {
+    .noticia:not(.noticia-1) {
+        flex-direction: column !important;
+        img {
+            width: 100% !important;
         }
     }
+}
 
+
+@media screen and (max-width: 992px) {
     .div-infos {
         img {
             border-radius: 24px !important;
@@ -298,12 +299,30 @@ h1 {
     }
 
     .div-noticias {
+        .noticia {
+            margin-bottom: 2em !important;
+        }
+
         .noticia-1 {
             border-radius: 16px !important;
+            height: 240px;
+
+            .conteudo {
+                padding: 20px;
+            }
+
+            .data,
+            .titulo {
+                margin: 0;
+            }
 
             img {
                 width: 240px;
                 height: 240px;
+            }
+
+            .data{
+                font-size: 16px;
             }
 
             .titulo {
@@ -317,17 +336,27 @@ h1 {
 
         .noticia:not(.noticia-1) {
             display: flex;
+            flex-direction: row;
             gap: 20px;
 
             img {
-                aspect-ratio: 5 / 3;
-                border-radius: 8px;
+                width: 240px;
+                height: 180px;
+                border-radius: 8px !important;
                 object-fit: cover;
             }
 
             .titulo {
                 font-weight: 700;
                 font-size: 24px;
+                margin-top: 0 !important;
+            }
+
+            .texto {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
         }
     }
@@ -338,12 +367,14 @@ h1 {
         }
 
         .contato-info {
-            display: flex;
+            //display: flex;
+            //flex-wrap: wrap;
             gap: 80px;
             order: 2;
 
             .contato-dado {
-                width: 33%;
+                //flex: 1 0 50%;
+                //max-width: 50%;
             }
 
             .titulo {
@@ -355,14 +386,13 @@ h1 {
             }
         }
 
+        .card,
+        .contato-info {
+            width: 100% !important;
+        }
+
         .card {
             margin-bottom: 0;
         }
-    }
-}
-
-@media screen and (max-width: 599px) {
-    .ambiente{
-        border-radius: 16px !important;
     }
 }

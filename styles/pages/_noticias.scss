@@ -120,3 +120,42 @@
         aspect-ratio: unset !important;
     }
 }
+
+.noticia-related {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+
+    .num {
+        color: #36a9e1;
+        font-size: 34px;
+        font-weight: 400;
+        margin-right: 1em;
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 54px;
+            background-color: #00446B;
+            top: -5px;
+            right: -.5em;
+        }
+    }
+
+    .titulo {
+        font-size: 20px;
+        font-weight: 600;
+        color: #262626;
+        text-transform: none;
+    }
+
+    img {
+        width: 240px;
+        height: 140px;
+        object-fit: cover;
+        margin-left: auto;
+        border-radius: 24px;
+    }
+}
