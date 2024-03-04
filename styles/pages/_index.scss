@@ -40,6 +40,11 @@ h1 {
         font-size: 24px;
         margin-top: 16px;
         margin-bottom: 72px;
+
+        &:hover {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
     }
 
     .btn-editais {
@@ -47,6 +52,11 @@ h1 {
         border-radius: 0;
         font-weight: 700;
         font-size: 24px;
+
+        &:hover {
+            color: #00446b;
+            border-color: #00446b;
+        }
     }
 }
 
@@ -74,31 +84,49 @@ h1 {
     .ambiente-1 {
         background-color: #ff8a00;
         //border-radius: 76px 4px 4px 4px;
+        .btn:hover {
+            background-color: hsl(32, 100%, 25%);
+        }
     }
 
     .ambiente-2 {
         background-color: #a0c044;
         //border-radius: 4px;
+        .btn:hover {
+            background-color: hsl(75, 50%, 25%);
+        }
     }
 
     .ambiente-3 {
         background-color: #008dd4;
         //border-radius: 4px 76px 4px 4px;
+        .btn:hover {
+            background-color: hsl(200, 100%, 20%);
+        }
     }
 
     .ambiente-4 {
         background-color: #cb579e;
         //border-radius: 4px 4px 4px 76px;
+        .btn:hover {
+            background-color: hsl(323, 53%, 30%);
+        }
     }
 
     .ambiente-5 {
         background-color: #02bead;
         //border-radius: 4px;
+        .btn:hover {
+            background-color: hsl(175, 98%, 20%);
+        }
     }
 
     .ambiente-6 {
         background-color: #a5adbb;
         //border-radius: 4px 4px 76px 4px;
+        .btn:hover {
+            background-color: hsl(218, 14%, 35%);
+        }
     }
 }
 
@@ -150,6 +178,10 @@ h1 {
         font-size: 24px;
         padding-left: 24px;
         padding-right: 24px;
+
+        &:hover {
+            filter: grayscale(100%);
+        }
     }
 }
 
@@ -289,7 +321,6 @@ h1 {
     }
 }
 
-
 @media screen and (max-width: 992px) {
     .div-infos {
         img {
@@ -321,7 +352,7 @@ h1 {
                 height: 240px;
             }
 
-            .data{
+            .data {
                 font-size: 16px;
             }
 

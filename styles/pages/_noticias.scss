@@ -2,6 +2,9 @@
     .row {
         margin-top: 40px;
         margin-bottom: 40px;
+        [class^="col"] .card {
+            height: 100%;
+        }
     }
 
     .pesquisa {
@@ -25,9 +28,11 @@
         font-weight: 600;
     }
 
-    .card-noticia {
-        aspect-ratio: 3/4;
+    a{
+        color: #262626;
+    }
 
+    .card-noticia {
         .card-body {
             padding: 8px;
         }
@@ -46,7 +51,7 @@
         .card-text {
             -webkit-box-orient: vertical;
             display: -webkit-box;
-            -webkit-line-clamp: 10;
+            -webkit-line-clamp: 5;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
@@ -133,14 +138,14 @@
         margin-right: 1em;
         position: relative;
 
-        &::after{
-            content: '';
+        &::after {
+            content: "";
             position: absolute;
             width: 2px;
             height: 54px;
-            background-color: #00446B;
+            background-color: #00446b;
             top: -5px;
-            right: -.5em;
+            right: -0.5em;
         }
     }
 

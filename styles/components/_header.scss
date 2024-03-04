@@ -6,6 +6,10 @@
 
     .nav-link {
         color: black;
+
+        &:hover{
+            color: #00446b;
+        }
     }
 
     .nav-link,
@@ -16,6 +20,10 @@
 
     i {
         color: #00446b;
+    }
+
+    ul {
+        gap: 1em;
     }
 }
 

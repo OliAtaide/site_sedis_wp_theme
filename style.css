@@ -282,11 +282,19 @@ h1 {
   margin-top: 16px;
   margin-bottom: 72px;
 }
+.div-cabecalho .btn-cursos:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 .div-cabecalho .btn-editais {
   border-bottom: 4px solid #262626;
   border-radius: 0;
   font-weight: 700;
   font-size: 24px;
+}
+.div-cabecalho .btn-editais:hover {
+  color: #00446b;
+  border-color: #00446b;
 }
 
 .div-aprendizado,
@@ -311,20 +319,38 @@ h1 {
 .ambientes .ambiente-1 {
   background-color: #ff8a00;
 }
+.ambientes .ambiente-1 .btn:hover {
+  background-color: hsl(32deg, 100%, 25%);
+}
 .ambientes .ambiente-2 {
   background-color: #a0c044;
+}
+.ambientes .ambiente-2 .btn:hover {
+  background-color: hsl(75deg, 50%, 25%);
 }
 .ambientes .ambiente-3 {
   background-color: #008dd4;
 }
+.ambientes .ambiente-3 .btn:hover {
+  background-color: hsl(200deg, 100%, 20%);
+}
 .ambientes .ambiente-4 {
   background-color: #cb579e;
+}
+.ambientes .ambiente-4 .btn:hover {
+  background-color: hsl(323deg, 53%, 30%);
 }
 .ambientes .ambiente-5 {
   background-color: #02bead;
 }
+.ambientes .ambiente-5 .btn:hover {
+  background-color: hsl(175deg, 98%, 20%);
+}
 .ambientes .ambiente-6 {
   background-color: #a5adbb;
+}
+.ambientes .ambiente-6 .btn:hover {
+  background-color: hsl(218deg, 14%, 35%);
 }
 
 .div-ead iframe {
@@ -361,6 +387,9 @@ h1 {
   font-size: 24px;
   padding-left: 24px;
   padding-right: 24px;
+}
+.div-infos .btn:hover {
+  filter: grayscale(100%);
 }
 
 .div-noticias .noticia-1 {
@@ -547,6 +576,9 @@ h1 {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+.div-noticia-ultimas .row [class^=col] .card {
+  height: 100%;
+}
 .div-noticia-ultimas .pesquisa {
   margin-top: 24px;
 }
@@ -564,8 +596,8 @@ h1 {
   border: 1px solid #00446b;
   font-weight: 600;
 }
-.div-noticia-ultimas .card-noticia {
-  aspect-ratio: 3/4;
+.div-noticia-ultimas a {
+  color: #262626;
 }
 .div-noticia-ultimas .card-noticia .card-body {
   padding: 8px;
@@ -582,7 +614,7 @@ h1 {
 .div-noticia-ultimas .card-noticia .card-text {
   -webkit-box-orient: vertical;
   display: -webkit-box;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 5;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
@@ -661,7 +693,7 @@ h1 {
   position: absolute;
   width: 2px;
   height: 54px;
-  background-color: #00446B;
+  background-color: #00446b;
   top: -5px;
   right: -0.5em;
 }
@@ -817,6 +849,9 @@ h1 {
     height: auto !important;
     aspect-ratio: 7/5;
   }
+  iframe {
+    width: 100% !important;
+  }
 }
 .navbar {
   padding-top: 42px;
@@ -827,6 +862,9 @@ h1 {
 .navbar .nav-link {
   color: black;
 }
+.navbar .nav-link:hover {
+  color: #00446b;
+}
 .navbar .nav-link,
 .navbar i {
   font-weight: 600;
@@ -834,6 +872,9 @@ h1 {
 }
 .navbar i {
   color: #00446b;
+}
+.navbar ul {
+  gap: 1em;
 }
 
 @media screen and (max-width: 1239px) {

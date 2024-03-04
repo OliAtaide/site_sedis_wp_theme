@@ -1,4 +1,4 @@
-<?php /* Template Name: Editais */
+<?php 
 get_header(); ?>
 <div class="container mt-5">
     <nav aria-label="breadcrumb">

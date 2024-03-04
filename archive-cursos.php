@@ -1,3 +1,3 @@
-<?php /* Template Name: Editais */
+<?php 
 get_header();
 ?>
