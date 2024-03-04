@@ -214,6 +214,10 @@ h1 {
             font-weight: 400;
             font-size: 24px;
         }
+
+        &:hover .link{
+            text-decoration: underline;
+        }
     }
 
     .col-6 .noticia {
@@ -233,16 +237,20 @@ h1 {
             width: 100%;
             aspect-ratio: 5 / 3;
         }
+
+        &:hover a{
+            color: #00446b !important;
+        }
     }
 
     .noticia-2 {
-        img {
+        .img-container {
             border-radius: 4px 4px 4px 48px;
         }
     }
 
     .noticia-3 {
-        img {
+        .img-container {
             border-radius: 4px 4px 48px 4px;
         }
     }

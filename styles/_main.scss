@@ -20,18 +20,30 @@ main {
     min-height: 100vh;
 }
 
-a{
+a {
     text-decoration: none;
-    
-    .card{
+
+    .card {
         color: black;
     }
 }
 
-.border-primary{
-    border-color: #00446B !important;
-    color: #00446B !important;
+.border-primary {
+    border-color: #00446b !important;
+    color: #00446b !important;
     font-weight: 600;
     font-size: 18px;
     padding: 8px 24px;
+}
+
+.img-container {
+    overflow: hidden;
+
+    img {
+        transition: transform 0.2s;
+    }
+}
+
+.noticia:hover img {
+    transform: scale(1.5);
 }

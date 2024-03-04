@@ -191,7 +191,9 @@ get_header();
                         <div class="col-12">
                             <a href="<?= the_permalink() ?>">
                                 <div class="noticia noticia-1 d-flex">
-                                    <img src="<?= the_post_thumbnail_url() ?>" alt="">
+                                    <div class="img-container">
+                                        <img src="<?= the_post_thumbnail_url() ?>" alt="">
+                                    </div>
                                     <div class="conteudo d-flex flex-column">
                                         <p class="data">
                                             <?php the_date() ?>
@@ -210,7 +212,9 @@ get_header();
                         <div class="col-lg-6">
                             <a href="<?= the_permalink() ?>" class="text-black">
                                 <div class="noticia noticia-<?= $news_query->current_post + 1 ?>">
-                                    <img src="<?= the_post_thumbnail_url() ?>" alt="" class="">
+                                    <div class="img-container">
+                                        <img src="<?= the_post_thumbnail_url() ?>" alt="" class="">
+                                    </div>
                                     <div>
                                         <h1 class="titulo my-3">
                                             <?php the_title() ?>

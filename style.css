@@ -417,6 +417,9 @@ h1 {
   font-weight: 400;
   font-size: 24px;
 }
+.div-noticias .noticia-1:hover .link {
+  text-decoration: underline;
+}
 .div-noticias .col-6 .noticia h1 {
   font-weight: 700;
   font-size: 32px;
@@ -429,10 +432,14 @@ h1 {
   width: 100%;
   aspect-ratio: 5/3;
 }
-.div-noticias .noticia-2 img {
+.div-noticias .noticia-2:hover a,
+.div-noticias .noticia-3:hover a {
+  color: #00446b !important;
+}
+.div-noticias .noticia-2 .img-container {
   border-radius: 4px 4px 4px 48px;
 }
-.div-noticias .noticia-3 img {
+.div-noticias .noticia-3 .img-container {
   border-radius: 4px 4px 48px 4px;
 }
 .div-noticias .btn {
@@ -952,11 +959,22 @@ a .card {
 }
 
 .border-primary {
-  border-color: #00446B !important;
-  color: #00446B !important;
+  border-color: #00446b !important;
+  color: #00446b !important;
   font-weight: 600;
   font-size: 18px;
   padding: 8px 24px;
+}
+
+.img-container {
+  overflow: hidden;
+}
+.img-container img {
+  transition: transform 0.2s;
+}
+
+.noticia:hover img {
+  transform: scale(1.5);
 }
 
 /*# sourceMappingURL=style.css.map */
