@@ -28,7 +28,7 @@
         font-weight: 600;
     }
 
-    a{
+    a {
         color: #262626;
     }
 
@@ -37,11 +37,15 @@
             padding: 8px;
         }
 
+        .img-container {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            border-radius: var(--bs-card-inner-border-radius);
+        }
+
         .card-img {
             aspect-ratio: 3/1;
             object-fit: cover;
-            margin-top: 8px;
-            margin-bottom: 8px;
         }
 
         .card-title {
@@ -57,9 +61,13 @@
             white-space: normal;
         }
 
-        .tags a {
+        .cats a {
             color: #36a9e1;
             text-decoration: none;
+
+            &:hover {
+                filter: grayscale(100%);
+            }
         }
     }
 }

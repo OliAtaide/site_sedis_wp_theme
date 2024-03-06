@@ -75,7 +75,7 @@ $noticias = get_posts(
                             <span class="card-text">
                                 <?php echo apply_filters('the_content', $noticias[$i]->post_content); ?>
                             </span>
-                            <div class="tags mt-auto">
+                            <div class="cats mt-auto">
                                 <strong>Categorias:</strong>
                                 <?php
                                 $cat = wp_get_post_categories($noticias[$i]->ID, array('fields' => 'all'));

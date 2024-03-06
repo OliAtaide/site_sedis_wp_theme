@@ -44,6 +44,10 @@ a {
     }
 }
 
-.noticia:hover img {
-    transform: scale(1.5);
+.noticia,
+.card-noticia,
+.noticia-destaque {
+    :hover img {
+        transform: scale(1.25);
+    }
 }

@@ -4,54 +4,17 @@ get_header();
 $noticias = new WP_Query(
     array(
         'post_type' => 'post',
-        'posts_per_page' => 9 + !is_paged(),
-        'paged' => $paged
+        'posts_per_page' => 9,
+        'paged' => $paged,
+        'cat' => get_query_var('cat')
     )
 );
 ?>
-<?php
-
-if ($noticias->have_posts()):
-    if (!is_paged()):
-        $destaque = $noticias->posts[0];
-        ?>
-        <div class="div-noticia-destaque py-5">
-            <div class="container">
-                <h1>
-                    Em destaque
-                </h1>
-                <hr>
-                <a href="<?= the_permalink(); ?>">
-                    <div class="d-flex noticia-destaque">
-                        <div class="img-container">
-                            <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($destaque->ID), 'thumbnail'); ?>"
-                                alt="">
-                        </div>
-                        <div class="noticia-destaque-info">
-                            <p class="data">
-                                <?= $destaque->post_date; ?>
-                            </p>
-                            <h1 class="titulo">
-                                <?= $destaque->post_title; ?>
-                            </h1>
-                            <div class="texto">
-                                <?= apply_filters('the_excerpt', $destaque->post_content); ?>
-                            </div>
-                            <a href="<?= get_the_permalink($destaque); ?>">
-                                Saiba Mais
-                            </a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <?php
-    endif;
-endif;
-?>
 <div class="div-noticia-ultimas py-5">
     <div class="container">
-        <h1 class="titulo">Últimas notícias</h1>
+        <h1 class="titulo">Categoria:
+            <?php single_cat_title(); ?>
+        </h1>
         <hr>
         <p class="texto"></p>
         <div class="navegar-por">
@@ -72,10 +35,7 @@ endif;
         <div class="row">
             <?php if ($noticias->have_posts()):
                 while ($noticias->have_posts()):
-                    $noticias->the_post();
-                    if ($noticias->current_post == 0 && !is_paged()):
-                        continue;
-                    endif; ?>
+                    $noticias->the_post(); ?>
                     <div class="col-sm-6 col-lg-4 mb-4">
                         <a href="<?= the_permalink(); ?>">
                             <div class="card card-noticia">
