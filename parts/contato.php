@@ -1,6 +1,6 @@
 <div class="div-contato">
     <div class="container">
-        <div class="d-flex row-gap-5">
+        <div class="d-flex column-gap-3">
             <div class="contato-info w-50">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-12">

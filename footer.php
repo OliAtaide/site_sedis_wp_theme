@@ -3,7 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/logo.svg' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri() . '/imgs/sedis_logo_white.svg' ?>" alt="">
+                <img src="<?php echo get_template_directory_uri() . '/imgs/ufrn_logo.svg' ?>" alt="">
                 <br>
                 <span>© 2023 Secretaria de educação a distância</span>
                 <ul>

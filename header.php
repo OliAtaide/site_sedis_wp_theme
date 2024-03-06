@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-xl fixed-top">
         <div class="container">
             <a class="navbar-brand" href="<?php echo get_home_url() ?>">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/logo_20.svg' ?>" alt="" srcset="">
+                <img src="<?php echo get_template_directory_uri() . '/imgs/sedis_logo.svg' ?>" alt="" srcset="">
             </a>
             <?php
             // Primary navigation menu.
